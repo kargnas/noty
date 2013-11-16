@@ -1,5 +1,5 @@
 /**
- * noty - jQuery Notification Plugin v2.1.0
+ * noty - jQuery Notification Plugin v2.1.2
  * Contributors: https://github.com/needim/noty/graphs/contributors
  *
  * Examples and Documentation - http://needim.github.com/noty/
@@ -68,7 +68,7 @@ if (typeof Object.create !== 'function') {
                 var self = this;
 
                 $.each(this.options.buttons, function (i, button) {
-                    var $button = $('<button/>').addClass((button.addClass) ? button.addClass : 'gray').html(button.text)
+                    var $button = $('<button/>').addClass((button.addClass) ? button.addClass : 'gray').html(button.text).attr('id', button.id ? button.id : 'button-' + i)
                         .appendTo(self.$bar.find('.noty_buttons'))
                         .bind('click', function () {
                             if ($.isFunction(button.onClick)) {
